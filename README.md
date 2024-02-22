@@ -1,1 +1,3 @@
-# php-currency
+# Currencies
+
+package for currencies

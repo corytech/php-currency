@@ -1,0 +1,16 @@
+{
+  "name": "corytech/php-currency",
+  "type": "library",
+  "description": "Currency library",
+  "keywords": ["currency"],
+  "license": "MIT",
+  "require": {
+    "php": ">=8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Corytech\\Currency": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
