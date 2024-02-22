@@ -1,3 +1,3 @@
 # Currencies
 
-package for currencies
+Package for currencies
