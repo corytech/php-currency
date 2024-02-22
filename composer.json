@@ -9,7 +9,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Corytech\\Currency": "src/"
+      "Corytech\\Currency\\": "src/"
     }
   },
   "minimum-stability": "dev"
