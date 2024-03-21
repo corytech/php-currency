@@ -239,8 +239,8 @@ class CurrencyTest extends TestCase
             ['XCD', '951', 2, 'East Caribbean Dollar'],
             ['XOF', '952', 0, 'CFA Franc BCEAO'],
             ['XPF', '953', 0, 'CFP Franc'],
-            ['XDR', '960', 18, 'SDR (Special Drawing Right)'],
-            ['XUA', '965', 18, 'ADB Unit of Account'],
+            ['XDR', '960', 17, 'SDR (Special Drawing Right)'],
+            ['XUA', '965', 17, 'ADB Unit of Account'],
             ['ZMW', '967', 2, 'Zambian Kwacha'],
             ['SRD', '968', 2, 'Surinam Dollar'],
             ['MGA', '969', 2, 'Malagasy Ariary'],
@@ -259,7 +259,7 @@ class CurrencyTest extends TestCase
             ['PLN', '985', 2, 'Zloty'],
             ['BRL', '986', 2, 'Brazilian Real'],
             ['CLF', '990', 4, 'Unidad de Fomento'],
-            ['XSU', '994', 18, 'Sucre'],
+            ['XSU', '994', 17, 'Sucre'],
             ['USN', '997', 2, 'US Dollar (Next day)'],
         ];
     }

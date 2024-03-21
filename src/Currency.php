@@ -269,11 +269,11 @@ enum Currency: string
             self::CLF, self::UYW => 4,
 
             // on iso 4217 precision is 'N.A.' set default COMPANY_SCALE.
-            self::XDR, self::XUA, self::XSU => 18,
+            self::XDR, self::XUA, self::XSU => 17,
 
             self::BCH, self::BTC, self::LTC, self::USDT => 8,
 
-            self::ETH, self::TRX, self::BNB => 18,
+            self::ETH, self::TRX, self::BNB => 17,
 
             self::XLM => 7,
             self::XRP => 15,
