@@ -259,7 +259,7 @@ class CurrencyTest extends TestCase
             ['PLN', '985', 2, 'Zloty'],
             ['BRL', '986', 2, 'Brazilian Real'],
             ['CLF', '990', 4, 'Unidad de Fomento'],
-            ['XSU', '994', 18, 'Sucre'],
+            ['XSU', '994', 17, 'Sucre'],
             ['USN', '997', 2, 'US Dollar (Next day)'],
         ];
     }
