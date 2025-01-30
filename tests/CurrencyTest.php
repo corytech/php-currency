@@ -16,14 +16,14 @@ class CurrencyTest extends TestCase
         string $codeAlphabet,
         string $codeNumber,
         int $precision,
-        string $currencyName
+        string $currencyName,
     ): void {
         $currency = Currency::tryFrom(strtolower($codeAlphabet));
         self::assertNotNull($currency);
         self::assertEquals(
             $codeAlphabet,
             $currency->getUpperCaseCode(),
-            sprintf(
+            \sprintf(
                 'Alphabet code not equals expect"%s" get "%s"',
                 $codeAlphabet,
                 $currency->getUpperCaseCode()
@@ -32,7 +32,7 @@ class CurrencyTest extends TestCase
         self::assertEquals(
             $codeNumber,
             $currency->getIso4217AheadZeroValue(),
-            sprintf(
+            \sprintf(
                 'Number code not equals expect"%s" get "%s"',
                 $codeNumber,
                 $currency->getIso4217AheadZeroValue()
@@ -41,7 +41,7 @@ class CurrencyTest extends TestCase
         self::assertEquals(
             $precision,
             $currency->getPrecision(),
-            sprintf(
+            \sprintf(
                 'Precision not equals expect"%s" get "%s"',
                 $precision,
                 $currency->getPrecision()
@@ -50,7 +50,7 @@ class CurrencyTest extends TestCase
         self::assertEquals(
             $currencyName,
             $currency->getCurrencyName(),
-            sprintf(
+            \sprintf(
                 'Currency name not equals expect"%s" get "%s"',
                 $currencyName,
                 $currency->getCurrencyName()

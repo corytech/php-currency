@@ -185,6 +185,7 @@ enum Currency: string
     case LTC = 'ltc';
     case TRX = 'trx';
     case USDT = 'usdt';
+    case USDC = 'usdc';
     case XLM = 'xlm';
     case XRP = 'xrp';
     case XMR = 'xmr';
@@ -213,7 +214,7 @@ enum Currency: string
             self::TRY, self::TMT, self::UGX, self::UAH, self::AED, self::USN, self::UYU, self::UYI, self::UYW,
             self::UZS, self::VUV, self::VES, self::VED, self::VND, self::YER, self::ZMW, self::ZWL => CurrencyType::Fiat,
 
-            self::BCH, self::BTC, self::ETH, self::LTC, self::TRX, self::USDT, self::XLM, self::XRP,
+            self::BCH, self::BTC, self::ETH, self::LTC, self::TRX, self::USDT, self::USDC, self::XLM, self::XRP,
             self::XMR, self::BNB => CurrencyType::Crypto,
 
             default => throw new \InvalidArgumentException(), // for psalm
@@ -271,7 +272,7 @@ enum Currency: string
             // on iso 4217 precision is 'N.A.' set default COMPANY_SCALE.
             self::XDR, self::XUA, self::XSU => 17,
 
-            self::BCH, self::BTC, self::LTC, self::USDT => 8,
+            self::BCH, self::BTC, self::LTC, self::USDT, self::USDC => 8,
 
             self::ETH, self::TRX, self::BNB => 17,
 
@@ -456,7 +457,7 @@ enum Currency: string
             self::YER => 886,
             self::ZMW => 967,
             self::ZWL => 932,
-            default => null
+            default => null,
         };
     }
 
@@ -467,7 +468,7 @@ enum Currency: string
             return $intCode;
         }
 
-        return sprintf("%'.03d", $intCode);
+        return \sprintf("%'.03d", $intCode);
     }
 
     public static function tryFromIso4217(int $value): ?self
