@@ -23,13 +23,13 @@ class ExplorerUrlHelperTest extends TestCase
             if ($currency->isBlockchainNetworkRequired()) {
                 foreach (BlockchainNetwork::cases() as $blockchainNetwork) {
                     $key = $currency->value.'_'.$blockchainNetwork->value;
-                    if (!in_array($key, self::CASES_WITHOUT_URL, true)) {
+                    if (!\in_array($key, self::CASES_WITHOUT_URL, true)) {
                         yield $key => [$currency, $blockchainNetwork];
                     }
                 }
             } else {
                 $key = $currency->value;
-                if (!in_array($key, self::CASES_WITHOUT_URL, true)) {
+                if (!\in_array($key, self::CASES_WITHOUT_URL, true)) {
                     yield $key => [$currency, null];
                 }
             }
@@ -69,6 +69,12 @@ class ExplorerUrlHelperTest extends TestCase
                 'https://etherscan.io/tx/12345',
             ],
             [
+                Currency::BCH,
+                null,
+                '12345',
+                'https://blockchair.com/bitcoin-cash/transaction/12345',
+            ],
+            [
                 Currency::LTC,
                 null,
                 '12345',
@@ -93,10 +99,10 @@ class ExplorerUrlHelperTest extends TestCase
                 'https://tronscan.org/#/transaction/12345',
             ],
             [
-                Currency::XMR,
+                Currency::BNB,
                 null,
                 '12345',
-                'https://localmonero.co/blocks/tx/12345',
+                'https://bscscan.com/tx/12345',
             ],
             [
                 Currency::USDT,
@@ -133,6 +139,78 @@ class ExplorerUrlHelperTest extends TestCase
                 BlockchainNetwork::Sol,
                 '12345',
                 'https://explorer.solana.com/tx/12345',
+            ],
+            [
+                Currency::USDT,
+                BlockchainNetwork::Bep20,
+                '12345',
+                'https://bscscan.com/tx/12345',
+            ],
+            [
+                Currency::USDC,
+                BlockchainNetwork::Bep20,
+                '12345',
+                'https://bscscan.com/tx/12345',
+            ],
+            [
+                Currency::USDT,
+                BlockchainNetwork::Bep2,
+                '12345',
+                'https://explorer.bnbchain.org/tx/12345',
+            ],
+            [
+                Currency::USDC,
+                BlockchainNetwork::Bep2,
+                '12345',
+                'https://explorer.bnbchain.org/tx/12345',
+            ],
+            [
+                Currency::USDT,
+                BlockchainNetwork::Base,
+                '12345',
+                'https://basescan.org/tx/12345',
+            ],
+            [
+                Currency::USDC,
+                BlockchainNetwork::Base,
+                '12345',
+                'https://basescan.org/tx/12345',
+            ],
+            [
+                Currency::USDT,
+                BlockchainNetwork::Optimism,
+                '12345',
+                'https://optimistic.etherscan.io/tx/12345',
+            ],
+            [
+                Currency::USDC,
+                BlockchainNetwork::Optimism,
+                '12345',
+                'https://optimistic.etherscan.io/tx/12345',
+            ],
+            [
+                Currency::USDT,
+                BlockchainNetwork::Arbitrum,
+                '12345',
+                'https://arbiscan.io/tx/12345',
+            ],
+            [
+                Currency::USDC,
+                BlockchainNetwork::Arbitrum,
+                '12345',
+                'https://arbiscan.io/tx/12345',
+            ],
+            [
+                Currency::USDT,
+                BlockchainNetwork::Stellar,
+                '12345',
+                'https://stellarchain.io/tx/12345',
+            ],
+            [
+                Currency::USDC,
+                BlockchainNetwork::Stellar,
+                '12345',
+                'https://stellarchain.io/tx/12345',
             ],
         ];
     }
