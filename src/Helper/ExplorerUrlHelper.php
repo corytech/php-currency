@@ -9,38 +9,27 @@ use Corytech\Currency\Currency;
 
 final class ExplorerUrlHelper
 {
+    private const BLOCKCHAIN_NETWORK_URL_PATTERNS = [
+        BlockchainNetwork::Erc20->value => 'https://etherscan.io/tx/{id}',
+        BlockchainNetwork::Trc20->value => 'https://tronscan.org/#/transaction/{id}',
+        BlockchainNetwork::Bep20->value => 'https://bscscan.com/tx/{id}',
+        BlockchainNetwork::Bep2->value => 'https://explorer.bnbchain.org/tx/{id}',
+        BlockchainNetwork::Sol->value => 'https://explorer.solana.com/tx/{id}',
+        BlockchainNetwork::Base->value => 'https://basescan.org/tx/{id}',
+        BlockchainNetwork::Optimism->value => 'https://optimistic.etherscan.io/tx/{id}',
+        BlockchainNetwork::Arbitrum->value => 'https://arbiscan.io/tx/{id}',
+        BlockchainNetwork::Stellar->value => 'https://stellarchain.io/tx/{id}',
+    ];
+
     private const URL_PATTERNS = [
-        Currency::BTC->value => [
-            null => 'https://blockchain.com/btc/tx/{id}',
-        ],
-        Currency::ETH->value => [
-            null => 'https://etherscan.io/tx/{id}',
-        ],
-        Currency::LTC->value => [
-            null => 'https://blockchair.com/litecoin/transaction/{id}',
-        ],
-        Currency::XLM->value => [
-            null => 'https://stellar.expert/explorer/public/tx/{id}',
-        ],
-        Currency::XRP->value => [
-            null => 'https://bithomp.com/explorer/{id}',
-        ],
-        Currency::TRX->value => [
-            null => 'https://tronscan.org/#/transaction/{id}',
-        ],
-        Currency::XMR->value => [
-            null => 'https://localmonero.co/blocks/tx/{id}',
-        ],
-        Currency::USDT->value => [
-            BlockchainNetwork::Erc20->value => 'https://etherscan.io/tx/{id}',
-            BlockchainNetwork::Trc20->value => 'https://tronscan.org/#/transaction/{id}',
-            BlockchainNetwork::Sol->value => 'https://explorer.solana.com/tx/{id}',
-        ],
-        Currency::USDC->value => [
-            BlockchainNetwork::Erc20->value => 'https://etherscan.io/tx/{id}',
-            BlockchainNetwork::Trc20->value => 'https://tronscan.org/#/transaction/{id}',
-            BlockchainNetwork::Sol->value => 'https://explorer.solana.com/tx/{id}',
-        ],
+        Currency::BCH->value => 'https://blockchair.com/bitcoin-cash/transaction/{id}',
+        Currency::BTC->value => 'https://blockchain.com/btc/tx/{id}',
+        Currency::ETH->value => 'https://etherscan.io/tx/{id}',
+        Currency::LTC->value => 'https://blockchair.com/litecoin/transaction/{id}',
+        Currency::XLM->value => 'https://stellar.expert/explorer/public/tx/{id}',
+        Currency::XRP->value => 'https://bithomp.com/explorer/{id}',
+        Currency::TRX->value => 'https://tronscan.org/#/transaction/{id}',
+        Currency::BNB->value => 'https://bscscan.com/tx/{id}',
     ];
 
     public static function getBlockchainExplorerUrl(
@@ -48,8 +37,11 @@ final class ExplorerUrlHelper
         Currency $currency,
         ?BlockchainNetwork $blockchainNetwork,
     ): ?string {
-        $pattern = self::URL_PATTERNS[$currency->value][$blockchainNetwork?->value] ?? null;
-
+        if ($blockchainNetwork) {
+            $pattern = self::BLOCKCHAIN_NETWORK_URL_PATTERNS[$blockchainNetwork->value] ?? null;
+        } else {
+            $pattern = self::URL_PATTERNS[$currency->value] ?? null;
+        }
         if (!$pattern) {
             return null;
         }

@@ -13,12 +13,24 @@ use PHPUnit\Framework\TestCase;
 
 class ExplorerUrlHelperTest extends TestCase
 {
+    private const CASES_WITHOUT_URL = [
+        Currency::XMR->value
+    ];
+
     public static function getAllPossibleCases(): iterable
     {
         foreach (Currency::getCryptoCurrencies() as $currency) {
             if ($currency->isBlockchainNetworkRequired()) {
                 foreach (BlockchainNetwork::cases() as $blockchainNetwork) {
-                    yield $currency->value.'_'.$blockchainNetwork->value => [$currency, $blockchainNetwork];
+                    $key = $currency->value.'_'.$blockchainNetwork->value;
+                    if (!in_array($key, self::CASES_WITHOUT_URL, true)) {
+                        yield $key => [$currency, $blockchainNetwork];
+                    }
+                }
+            } else {
+                $key = $currency->value;
+                if (!in_array($key, self::CASES_WITHOUT_URL, true)) {
+                    yield $key => [$currency, null];
                 }
             }
         }
