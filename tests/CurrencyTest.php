@@ -11,6 +11,26 @@ use PHPUnit\Framework\TestCase;
 
 class CurrencyTest extends TestCase
 {
+    public static function getAllCurrenciesCases(): iterable
+    {
+        foreach (Currency::cases() as $currency) {
+            yield $currency->value => [$currency];
+        }
+    }
+
+    #[DataProvider('getAllCurrenciesCases')]
+    public function testIsBlockchainNetworkRequiredWillReturnExpectedValue(Currency $currency): void
+    {
+        if (\in_array($currency, [
+            Currency::USDT,
+            Currency::USDC,
+        ], true)) {
+            self::assertTrue($currency->isBlockchainNetworkRequired());
+        } else {
+            self::assertFalse($currency->isBlockchainNetworkRequired());
+        }
+    }
+
     #[DataProvider('getDataIso4217Currency')]
     public function testIso4217(
         string $codeAlphabet,
