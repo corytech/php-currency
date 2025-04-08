@@ -141,8 +141,9 @@ class ExplorerUrlHelperTest extends TestCase
         ?BlockchainNetwork $blockchainNetwork,
     ): void {
         foreach (self::getDataProvider() as $case) {
-            if($case[0] === $currency && $case[1] === $blockchainNetwork) {
+            if ($case[0] === $currency && $case[1] === $blockchainNetwork) {
                 self::assertTrue(true);
+
                 return;
             }
         }
