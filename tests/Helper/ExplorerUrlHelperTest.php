@@ -238,4 +238,17 @@ class ExplorerUrlHelperTest extends TestCase
         }
         self::fail('Case '.$currency->value.' '.$blockchainNetwork->value.' should be covered');
     }
+
+    public static function getAllFiatCurrenciesCases(): iterable
+    {
+        foreach (Currency::getFiatCurrencies() as $currency) {
+            yield $currency->value => [$currency];
+        }
+    }
+
+    #[DataProvider('getAllFiatCurrenciesCases')]
+    public function testGetBlockchainExplorerUrlWillReturnNullForFiatValue(Currency $currency): void
+    {
+        self::assertNull(ExplorerUrlHelper::getBlockchainExplorerUrl('123', $currency, null));
+    }
 }
