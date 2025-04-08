@@ -9,7 +9,7 @@ use Doctrine\DBAL\Types\Type;
 
 class CurrencyEnumKernelBootExtension
 {
-    public static function load()
+    public static function load(): void
     {
         if (Type::hasType(DoctrineCurrencyEnumType::TYPE_NAME)) {
             return;
