@@ -6,7 +6,6 @@ namespace Corytech\Currency\Tests\Helper;
 
 use Corytech\Currency\BlockchainNetwork;
 use Corytech\Currency\Currency;
-use Corytech\Currency\CurrencyType;
 use Corytech\Currency\Helper\ExplorerUrlHelper;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -14,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 class ExplorerUrlHelperTest extends TestCase
 {
     private const CASES_WITHOUT_URL = [
-        Currency::XMR->value
+        Currency::XMR->value,
     ];
 
     public static function getAllPossibleCases(): iterable
