@@ -492,6 +492,15 @@ enum Currency: string
         return strtoupper($this->value);
     }
 
+    public function isBlockchainNetworkRequired(): bool
+    {
+        return match ($this) {
+            self::USDT,
+            self::USDC => true,
+            default => false,
+        };
+    }
+
     /**
      * @return self[]
      */
