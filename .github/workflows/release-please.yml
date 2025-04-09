@@ -7,10 +7,6 @@ on:
 
 run-name: "Release please"
 
-permissions:
-  contents: write
-  pull-requests: write
-
 concurrency:
   group: release-${{ github.ref }}
   cancel-in-progress: false
