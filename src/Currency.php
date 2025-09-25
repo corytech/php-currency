@@ -191,6 +191,12 @@ enum Currency: string
     case XMR = 'xmr';
     case BNB = 'bnb';
 
+    case ARB = 'arb';
+    case OP = 'op';
+    case BASE = 'base';
+    case ADA = 'ada';
+    case MATIC = 'matic';
+
     public function type(): CurrencyType
     {
         return match ($this) {
@@ -215,7 +221,7 @@ enum Currency: string
             self::UZS, self::VUV, self::VES, self::VED, self::VND, self::YER, self::ZMW, self::ZWL => CurrencyType::Fiat,
 
             self::BCH, self::BTC, self::ETH, self::LTC, self::TRX, self::USDT, self::USDC, self::XLM, self::XRP,
-            self::XMR, self::BNB => CurrencyType::Crypto,
+            self::XMR, self::BNB, self::ARB, self::OP, self::BASE, self::ADA, self::MATIC => CurrencyType::Crypto,
 
             default => throw new \InvalidArgumentException(), // for psalm
         };
@@ -227,7 +233,7 @@ enum Currency: string
     public static function getCodes(): array
     {
         return array_map(
-            static fn (Currency $currency) => $currency->getCode(),
+            static fn(Currency $currency) => $currency->getCode(),
             self::cases()
         );
     }
@@ -270,12 +276,11 @@ enum Currency: string
             self::CLF, self::UYW => 4,
 
             // on iso 4217 precision is 'N.A.' set default COMPANY_SCALE.
-            self::XDR, self::XUA, self::XSU => 17,
+            self::XDR, self::XUA, self::XSU, self::ETH, self::TRX, self::BNB => 17,
 
-            self::BCH, self::BTC, self::LTC, self::USDT, self::USDC => 8,
+            self::BCH, self::BTC, self::LTC, self::USDT, self::USDC, self::ARB, self::OP, self::BASE, self::MATIC => 8,
 
-            self::ETH, self::TRX, self::BNB => 17,
-
+            self::ADA => 6,
             self::XLM => 7,
             self::XRP => 15,
             self::XMR => 12,
@@ -495,8 +500,7 @@ enum Currency: string
     public function isBlockchainNetworkRequired(): bool
     {
         return match ($this) {
-            self::USDT,
-            self::USDC => true,
+            self::USDT, self::USDC, self::ARB, self::OP, self::BASE, self::ADA, self::MATIC => true,
             default => false,
         };
     }
