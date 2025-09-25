@@ -23,7 +23,7 @@ enum BlockchainNetwork: string
 
     public static function getValues(): array
     {
-        return array_map(static fn(self $n) => $n->value, self::cases());
+        return array_map(static fn (self $n) => $n->value, self::cases());
     }
 
     public function isTagOrMemoRequired(): bool

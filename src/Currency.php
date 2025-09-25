@@ -233,7 +233,7 @@ enum Currency: string
     public static function getCodes(): array
     {
         return array_map(
-            static fn(Currency $currency) => $currency->getCode(),
+            static fn (Currency $currency) => $currency->getCode(),
             self::cases()
         );
     }
