@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.3.0](https://github.com/corytech/php-currency/compare/v1.2.0...v1.3.0) (2025-09-29)
+
+
+### 🚀 Features
+
+* Add crypto currencies and blockchain networks ([3c9cb72](https://github.com/corytech/php-currency/commit/3c9cb72eac2bd7306a2040b97efb01b734fcbbd2))
+* **CPD-6637:** Add crypto currencies and blockchain networks ([d418c23](https://github.com/corytech/php-currency/commit/d418c23098c51de5ee9e634a428b0f43b4a6d5c6))
+
+
+### 🐛 Bugfixes
+
+* add BlockchainExplorerUrl + test ([8a0049e](https://github.com/corytech/php-currency/commit/8a0049e529b0fd574512ba9bdf09e8e694c89d97))
+* cs and test ([4b2e665](https://github.com/corytech/php-currency/commit/4b2e66576855c515d1dc1d7b66d16b77b252a1de))
+* cs and test ([fc537ec](https://github.com/corytech/php-currency/commit/fc537ec73e8ef3f772bd6cec6c40c09f4be3edc0))
+
 ## [1.2.0](https://github.com/corytech/php-currency/compare/v1.1.0...v1.2.0) (2025-04-09)
 
 
