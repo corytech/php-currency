@@ -19,6 +19,11 @@ final class ExplorerUrlHelper
         BlockchainNetwork::Optimism->value => 'https://optimistic.etherscan.io/tx/{id}',
         BlockchainNetwork::Arbitrum->value => 'https://arbiscan.io/tx/{id}',
         BlockchainNetwork::Stellar->value => 'https://stellarchain.io/tx/{id}',
+        BlockchainNetwork::Cardano->value => 'https://cardanoscan.io/transaction/{id}',
+        BlockchainNetwork::Eip155_10->value => 'https://optimistic.etherscan.io/tx/{id}',
+        BlockchainNetwork::Eip155_137->value => 'https://polygonscan.com/tx/{id}',
+        BlockchainNetwork::Eip155_8453->value => 'https://basescan.org/tx/{id}',
+        BlockchainNetwork::Eip155_42161->value => 'https://arbiscan.io/tx/{id}',
     ];
 
     private const URL_PATTERNS = [
@@ -30,6 +35,11 @@ final class ExplorerUrlHelper
         Currency::XRP->value => 'https://bithomp.com/explorer/{id}',
         Currency::TRX->value => 'https://tronscan.org/#/transaction/{id}',
         Currency::BNB->value => 'https://bscscan.com/tx/{id}',
+        Currency::ARB->value => 'https://arbiscan.io/tx/{id}',
+        Currency::OP->value => 'https://optimistic.etherscan.io/tx/{id}',
+        Currency::BASE->value => 'https://basescan.org/tx/{id}',
+        Currency::ADA->value => 'https://cardanoscan.io/transaction/{id}',
+        Currency::MATIC->value => 'https://polygonscan.com/tx/{id}',
     ];
 
     public static function getBlockchainExplorerUrl(

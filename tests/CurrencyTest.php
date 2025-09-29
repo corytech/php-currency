@@ -24,6 +24,11 @@ class CurrencyTest extends TestCase
         if (\in_array($currency, [
             Currency::USDT,
             Currency::USDC,
+            Currency::ADA,
+            Currency::BASE,
+            Currency::OP,
+            Currency::ARB,
+            Currency::MATIC,
         ], true)) {
             self::assertTrue($currency->isBlockchainNetworkRequired());
         } else {
