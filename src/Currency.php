@@ -278,9 +278,9 @@ enum Currency: string
             // on iso 4217 precision is 'N.A.' set default COMPANY_SCALE.
             self::XDR, self::XUA, self::XSU, self::ETH, self::TRX, self::BNB => 17,
 
-            self::BCH, self::BTC, self::LTC, self::USDT, self::USDC, self::ARB, self::OP, self::BASE, self::MATIC => 8,
+            self::BCH, self::BTC, self::LTC, self::ARB, self::OP, self::BASE, self::MATIC => 8,
 
-            self::ADA => 6,
+            self::ADA, self::USDT, self::USDC => 6,
             self::XLM => 7,
             self::XRP => 15,
             self::XMR => 12,
