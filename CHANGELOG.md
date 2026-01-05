@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/corytech/php-currency/compare/v1.3.0...v1.4.0) (2026-01-05)
+
+
+### 🚀 Features
+
+* **CPD-7127:** change precision for USDT/USDC ([#9](https://github.com/corytech/php-currency/issues/9)) ([946796d](https://github.com/corytech/php-currency/commit/946796d4a11a93c4c323625b2746e4474101c3fb))
+
 ## [1.3.0](https://github.com/corytech/php-currency/compare/v1.2.0...v1.3.0) (2025-09-29)
 
 
