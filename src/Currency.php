@@ -196,6 +196,8 @@ enum Currency: string
     case BASE = 'base';
     case ADA = 'ada';
     case MATIC = 'matic';
+    case TON = 'ton';
+    case SOL = 'sol';
 
     public function type(): CurrencyType
     {
@@ -221,7 +223,7 @@ enum Currency: string
             self::UZS, self::VUV, self::VES, self::VED, self::VND, self::YER, self::ZMW, self::ZWL => CurrencyType::Fiat,
 
             self::BCH, self::BTC, self::ETH, self::LTC, self::TRX, self::USDT, self::USDC, self::XLM, self::XRP,
-            self::XMR, self::BNB, self::ARB, self::OP, self::BASE, self::ADA, self::MATIC => CurrencyType::Crypto,
+            self::XMR, self::BNB, self::ARB, self::OP, self::BASE, self::ADA, self::MATIC, self::TON, self::SOL => CurrencyType::Crypto,
 
             default => throw new \InvalidArgumentException(), // for psalm
         };
@@ -278,12 +280,13 @@ enum Currency: string
             // on iso 4217 precision is 'N.A.' set default COMPANY_SCALE.
             self::XDR, self::XUA, self::XSU, self::ETH, self::TRX, self::BNB => 17,
 
-            self::BCH, self::BTC, self::LTC, self::ARB, self::OP, self::BASE, self::MATIC => 8,
+            self::BCH, self::BTC, self::LTC, self::ARB, self::OP, self::BASE, self::MATIC, self::SOL => 8,
 
             self::ADA, self::USDT, self::USDC => 6,
             self::XLM => 7,
             self::XRP => 15,
             self::XMR => 12,
+            self::TON => 9,
 
             default => throw new \InvalidArgumentException(), // for psalm
         };
