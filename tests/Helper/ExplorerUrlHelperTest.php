@@ -691,6 +691,18 @@ class ExplorerUrlHelperTest extends TestCase
                 '12345',
                 'https://arbiscan.io/tx/12345',
             ],
+            [
+                Currency::TON,
+                null,
+                '12345',
+                'https://explorer.toncoin.org/transaction/12345',
+            ],
+            [
+                Currency::SOL,
+                null,
+                '12345',
+                'https://explorer.solana.com/tx/12345',
+            ],
         ];
     }
 
