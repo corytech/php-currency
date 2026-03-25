@@ -40,7 +40,7 @@ final class ExplorerUrlHelper
         Currency::BASE->value => 'https://basescan.org/tx/{id}',
         Currency::ADA->value => 'https://cardanoscan.io/transaction/{id}',
         Currency::MATIC->value => 'https://polygonscan.com/tx/{id}',
-        Currency::TON->value => 'https://tonscan.org/tx/{id}',
+        Currency::TON->value => 'https://explorer.toncoin.org/transaction/{id}',
         Currency::SOL->value => 'https://explorer.solana.com/tx/{id}',
     ];
 

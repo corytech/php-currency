@@ -695,7 +695,7 @@ class ExplorerUrlHelperTest extends TestCase
                 Currency::TON,
                 null,
                 '12345',
-                'https://tonscan.org/tx/12345',
+                'https://explorer.toncoin.org/transaction/12345',
             ],
             [
                 Currency::SOL,
