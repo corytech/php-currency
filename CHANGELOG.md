@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/corytech/php-currency/compare/v1.4.0...v1.5.0) (2026-03-25)
+
+
+### 🚀 Features
+
+* **CPD-7493:** ton and sol cryptocurrencies added ([#11](https://github.com/corytech/php-currency/issues/11)) ([f07aeba](https://github.com/corytech/php-currency/commit/f07aeba14233ce76dc264fa41c94a0e65e54a648))
+
 ## [1.4.0](https://github.com/corytech/php-currency/compare/v1.3.0...v1.4.0) (2026-01-05)
 
 
