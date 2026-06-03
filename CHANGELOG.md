@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/corytech/php-currency/compare/v1.5.0...v1.5.1) (2026-06-03)
+
+
+### 🧰 Maintenance
+
+* **CPD-7985:** Migrate GitHub Actions to Node 24 runtime ([#13](https://github.com/corytech/php-currency/issues/13)) ([89c4ebc](https://github.com/corytech/php-currency/commit/89c4ebcef4ba48f98488d1d5b99bec840e157d71))
+
 ## [1.5.0](https://github.com/corytech/php-currency/compare/v1.4.0...v1.5.0) (2026-03-25)
 
 
