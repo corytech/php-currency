@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/corytech/php-currency/compare/v1.5.1...v1.5.2) (2026-08-04)
+
+
+### 🧰 Maintenance
+
+* **CPD-8393:** Pin external actions with SHA ([#15](https://github.com/corytech/php-currency/issues/15)) ([7fed172](https://github.com/corytech/php-currency/commit/7fed17221e90710b62005fabb00a18a64e3c21f4))
+
 ## [1.5.1](https://github.com/corytech/php-currency/compare/v1.5.0...v1.5.1) (2026-06-03)
 
 
